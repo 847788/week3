@@ -77,11 +77,11 @@ def view_all_contacts(contacts):
         return
 
     for name, info in contacts.items():
-        print(f"👤 {name}")
-        print(f"   📞 {info['phone']}")
+        print(f" {name}")
+        print(f"  {info['phone']}")
         if info['email']:
-            print(f"   📧 {info['email']}")
-        print(f"   👥 {info['group']}")
+            print(f"    {info['email']}")
+        print(f"    {info['group']}")
         print("-" * 40)
 
 def search_contact(contacts):
@@ -101,12 +101,12 @@ def search_contact(contacts):
 
     for i, (name, info) in enumerate(results.items(), 1):
         print(f"{i}. {name}")
-        print(f"   📞 Phone: {info['phone']}")
+        print(f"    Phone: {info['phone']}")
         if info['email']:
-            print(f"   📧 Email: {info['email']}")
+            print(f"    Email: {info['email']}")
         if info['address']:
-            print(f"   📍 Address: {info['address']}")
-        print(f"   👥 Group: {info['group']}")
+            print(f"    Address: {info['address']}")
+        print(f"    Group: {info['group']}")
         print()
 
 def update_contact(contacts):
@@ -226,4 +226,5 @@ def main():
 
 if __name__ == "__main__":
     main()
+
 

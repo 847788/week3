@@ -1,0 +1,10 @@
+{
+    "John Doe": {
+        "phone": "12345678900",
+        "email": "john@example.com",
+        "address": "123 Main Street",
+        "group": "Friends",
+        "created_at": "2025-01-01T10:00:00",
+        "updated_at": "2025-01-01T10:00:00"
+    }
+}

@@ -22,13 +22,13 @@ def load_contacts():
     if os.path.exists(FILE_NAME):
         with open(FILE_NAME, "r") as f:
             return json.load(f)
-    print("\n✅ No existing contacts file found. Starting fresh.\n")
+    print("\n No existing contacts file found. Starting fresh.\n")
     return {}
 
 def save_contacts(contacts):
     with open(FILE_NAME, "w") as f:
         json.dump(contacts, f, indent=4)
-    print("✅ Contacts saved to contacts_data.json")
+    print(" Contacts saved to contacts_data.json")
 
 # ---------------- CORE FUNCTIONS ----------------
 def add_contact(contacts):
@@ -65,7 +65,7 @@ def add_contact(contacts):
         "updated_at": datetime.now().isoformat()
     }
 
-    print(f"✅ Contact '{name}' added successfully!")
+    print(f" Contact '{name}' added successfully!")
     save_contacts(contacts)
 
 def view_all_contacts(contacts):
@@ -136,14 +136,14 @@ def update_contact(contacts):
         contacts[name]["group"] = group
 
     contacts[name]["updated_at"] = datetime.now().isoformat()
-    print("✅ Contact updated successfully!")
+    print("Contact updated successfully!")
     save_contacts(contacts)
 
 def delete_contact(contacts):
     name = input("Enter contact name to delete: ").strip()
     if name in contacts:
         del contacts[name]
-        print("✅ Contact deleted!")
+        print(" Contact deleted!")
         save_contacts(contacts)
     else:
         print("Contact not found!")
@@ -154,7 +154,7 @@ def export_to_csv(contacts):
         writer.writerow(["Name", "Phone", "Email", "Address", "Group"])
         for name, info in contacts.items():
             writer.writerow([name, info["phone"], info["email"], info["address"], info["group"]])
-    print("✅ Contacts exported to contacts.csv")
+    print(" Contacts exported to contacts.csv")
 
 def view_statistics(contacts):
     print("\n--- CONTACT STATISTICS ---")
@@ -223,6 +223,7 @@ def main():
         else:
             print("Invalid choice!")
 
-# ✅ CORRECT ENTRY POINT (NO EXTRA SPACES)
+
 if __name__ == "__main__":
     main()
+
